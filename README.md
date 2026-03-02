@@ -28,7 +28,7 @@ You will need to have Node.js installed on your machine to run this frontend app
 1. **Clone the repository**
    Open your terminal and clone the repository to your local machine:
    ```bash
-   git clone <your-repository-url-here>
+   git clone <https://github.com/Ditokasiditz/EASM-security-Demo>
    cd EASM-security-Demo
    ```
 
