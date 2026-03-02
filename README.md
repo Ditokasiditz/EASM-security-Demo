@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# EASM Security Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a frontend demonstration project for an External Attack Surface Management (EASM) dashboard, built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## What is ASM (Attack Surface Management)?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Attack Surface Management (ASM)**, and specifically **External Attack Surface Management (EASM)**, is the continuous process of discovering, analyzing, and managing vulnerabilities and potential attack vectors on an organization's external-facing IT assets. 
 
-## React Compiler
+In simpler terms, it's about looking at your organization from a hacker's perspective. It involves:
+- **Discovery:** Finding all internet-connected assets belonging to your organization (domains, subdomains, IP addresses, open ports, web applications, cloud services, etc.).
+- **Inventory:** Keeping an up-to-date repository of these exposed assets.
+- **Analysis & Prioritization:** Assessing the risk of each asset based on vulnerabilities, misconfigurations, outdated software, or exposed sensitive information.
+- **Monitoring:** Continuously watching for changes in the attack surface, as new assets are deployed or configurations are altered.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+EASM solutions help organizations proactively identify blind spots before attackers can exploit them.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these instructions to get a copy of the project up and running on your local machine for development purposes.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+You will need to have Node.js installed on your machine to run this frontend application.
+- [Node.js](https://nodejs.org/) (v18 or newer is recommended)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation & Running Locally
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository**
+   Open your terminal and clone the repository to your local machine:
+   ```bash
+   git clone <your-repository-url-here>
+   cd EASM-security-Demo
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Install dependencies**
+   You can use `npm`, `yarn`, `pnpm`, or `bun`. Use the package manager of your choice to install the project dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Start the development server**
+   Once the dependencies are installed, start the Vite development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. **View the application**
+   Open your web browser and navigate to the URL provided in your terminal output (typically `http://localhost:5173`).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+- `npm run dev` - Starts the development server.
+- `npm run build` - Builds the app for production to the `dist` folder.
+- `npm run lint` - Runs ESLint to check for code quality issues.
+- `npm run preview` - Locally preview the production build.
