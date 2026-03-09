@@ -268,9 +268,9 @@ export default function HistoryPage() {
 
   /** 4) Aggregate -> Monthly (12 months full) */
   const monthly: MonthlyRow[] = useMemo(() => {
-    
+
     const map = new Map<string, MonthlyRow>();
-    
+
     filtered.forEach((e) => {
       const k = monthKeyFromTs(e.ts);
       if (!map.has(k)) {
@@ -290,7 +290,7 @@ export default function HistoryPage() {
       row.total += 1;
     });
 
-    
+
 
     // ✅ 12 เดือนย้อนหลัง (รวมเดือนล่าสุด) เสมอ
     const out: MonthlyRow[] = [];
@@ -317,7 +317,7 @@ export default function HistoryPage() {
         }
       );
     }
-    
+
     return out;
   }, [filtered]);
 
@@ -400,15 +400,15 @@ export default function HistoryPage() {
 
 
 
-              
+
               {/* <Line type="monotone" dataKey="total" stroke="#2563eb" strokeWidth={1} dot /> */}
 
               {/* ตัวอย่างการกำหนดสีของแต่ละเส้นในกราฟ */}
-              <Line type="monotone" dataKey="done" stroke={lineColor("done")} strokeWidth={2} dot />
-              <Line type="monotone" dataKey="failed" stroke={lineColor("failed")} strokeWidth={2} dot />
-              <Line type="monotone" dataKey="running" stroke={lineColor("running")} strokeWidth={2} dot />
-              <Line type="monotone" dataKey="queued" stroke={lineColor("queued")} strokeWidth={2} dot />
-              <Line type="monotone" dataKey="info" stroke={lineColor("info")} strokeWidth={2} dot />
+              <Line type="monotone" dataKey="done" stroke={lineColor("done")} strokeWidth={2} dot isAnimationActive={false} />
+              <Line type="monotone" dataKey="failed" stroke={lineColor("failed")} strokeWidth={2} dot isAnimationActive={false} />
+              <Line type="monotone" dataKey="running" stroke={lineColor("running")} strokeWidth={2} dot isAnimationActive={false} />
+              <Line type="monotone" dataKey="queued" stroke={lineColor("queued")} strokeWidth={2} dot isAnimationActive={false} />
+              <Line type="monotone" dataKey="info" stroke={lineColor("info")} strokeWidth={2} dot isAnimationActive={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
